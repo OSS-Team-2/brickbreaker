@@ -22,6 +22,7 @@ class Brick extends RectangleComponent
     children: [RectangleHitbox()],
     );
 
+
   @override
   void onCollisionStart(
     Set<Vector2> intersectionPoints, PositionComponent other) {
