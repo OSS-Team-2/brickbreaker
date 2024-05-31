@@ -40,7 +40,7 @@ class Bat extends PositionComponent
   void onDragUpdate(DragUpdateEvent event) {
     // Implement the drag update logic for the bat
     super.onDragUpdate(event);
-    position.x = (position.x + event.localDelta.x).clamp(0, game.width);
+    position.x = (position.x + event.localDelta.x).clamp(1, game.width);
   }
 
   void moveBy(double dx){
