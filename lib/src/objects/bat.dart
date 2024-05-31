@@ -43,6 +43,8 @@ class Bat extends PositionComponent
     position.x = (position.x + event.localDelta.x).clamp(0, game.width);
   }
 
+  // I wish som kind of comment pop up depend on ball's speed
+
   void moveBy(double dx){
     add(MoveToEffect(
       Vector2((position.x + dx).clamp(0, game.width), position.y),
