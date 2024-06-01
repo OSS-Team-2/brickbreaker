@@ -44,7 +44,7 @@ class Bat extends PositionComponent
   }
 
   // I wish som kind of comment pop up depend on ball's speed
-  // ## EffectControler is one
+  // ## EffectControler is one and sustainable thing
 
   void moveBy(double dx){
     add(MoveToEffect(
