@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:math' as math;
+import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
@@ -25,7 +25,7 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
     );
   final ValueNotifier<int> streak = ValueNotifier(0);
   final ValueNotifier<int> score = ValueNotifier(0);
-  final rand = math.Random();
+  final rand = Random();
   double get width => size.x;
   double get height => size.y;
 
@@ -106,7 +106,7 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
               (i + 0.5) * brickWidth + (i + 1) * brickGutter,
               (j + 2.0) * brickHeight + j * brickGutter,
             ),
-            color: brickColors[i],
+            color: brickColors[Random().nextInt(brickColors.length)],
           ),
     ]);
   }
