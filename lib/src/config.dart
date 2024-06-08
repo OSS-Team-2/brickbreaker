@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const brickColors = [
+const List<Color> brickColors = [
   Colors.red,
   Colors.orange,
   Colors.yellow,
