@@ -58,6 +58,10 @@ class Ball extends CircleComponent
           delay: 0.35,
         ));
       }
+      if (game.world.children.query<Ball>().isEmpty) { //check if there are no more ball
+      game.playState = PlayState.gameOver;
+      game.world.removeAll(game.world.children.query<Brick>());
+      game.world.removeAll(game.world.children.query<Bat>());
     } else if (other is Bat) {
       velocity.y *= -1;
       velocity.x = velocity.x +
@@ -90,10 +94,7 @@ class Ball extends CircleComponent
   }// Create and add a new ball
       
 
-    if (game.world.children.query<Ball>().isEmpty) { //check if there are no more ball
-      game.playState = PlayState.gameOver;
-      game.world.removeAll(game.world.children.query<Brick>());
-      game.world.removeAll(game.world.children.query<Bat>());
+    
 
     }
   }
