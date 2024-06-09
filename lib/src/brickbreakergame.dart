@@ -117,12 +117,12 @@ class BrickBreaker extends FlameGame
     ]);
   }
 
-  @override
-  void onTap() {
-    super.onTap();
-    startGame(difficulty: 1.0); // 예시로 기본 난이도 설정
-    playState = PlayState.welcome;
-  }
+  // @override
+  // void onTap() {
+  //   super.onTap();
+  //   startGame(difficulty: 1.0); // 예시로 기본 난이도 설정
+  //   playState = PlayState.welcome;
+  // }
 
   @override
   KeyEventResult onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
