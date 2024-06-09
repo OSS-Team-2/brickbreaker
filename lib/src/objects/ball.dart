@@ -3,6 +3,7 @@ import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'dart:math';
 
 import '../brickbreakergame.dart';
 import 'bat.dart';
@@ -14,6 +15,7 @@ class Ball extends CircleComponent
   with HasGameReference<BrickBreaker>, CollisionCallbacks {
   final Vector2 velocity;
   final double difficultyModifier;
+  final Random random = Random();
 
   Ball({
     required this.velocity,
@@ -76,8 +78,8 @@ class Ball extends CircleComponent
         velocity.setFrom(velocity * difficultyModifier);// Increase the speed of the ball with difficultyModifier
       game.streak.value += 1; // Increase the streak
 
-        // Create and add a new ball
-      final newBall = Ball(
+      if (random.nextDouble() <= 1.0/difficultyModifier){
+        final newBall = Ball(
         velocity: Vector2(velocity.x, -velocity.y),
         position: Vector2(position.x, position.y),
         radius: radius,
@@ -85,6 +87,8 @@ class Ball extends CircleComponent
       );
       game.world.add(newBall); // Ensure new ball is added to the world
     }
+  }// Create and add a new ball
+      
 
     if (game.world.children.query<Ball>().isEmpty) { //check if there are no more ball
       game.playState = PlayState.gameOver;
