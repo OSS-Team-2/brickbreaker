@@ -33,7 +33,7 @@ class DifficultyOverlay extends StatelessWidget {
               width: 200, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
-                  game.startGame(difficulty: 1.5); // Medium
+                  game.startGame(difficulty: 1.1); // Medium
                 },
                 child: const Text('Medium'),
               ),
@@ -43,7 +43,7 @@ class DifficultyOverlay extends StatelessWidget {
               width: 200, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
-                  game.startGame(difficulty: 2.0); // Hard
+                  game.startGame(difficulty: 1.2); // Hard
                 },
                 child: const Text('Hard'),
               ),
