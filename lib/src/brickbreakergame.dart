@@ -15,13 +15,16 @@ import 'config.dart';
 
 enum PlayState { welcome, playing, gameOver, gameWon } // play states
 
-class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents, TapDetector {
+
+class BrickBreaker extends FlameGame 
+  with HasCollisionDetection, KeyboardEvents, TapDetector {
+  
   BrickBreaker()
     : super(
       camera: CameraComponent.withFixedResolution(
         width: gameWidth, 
         height: gameHeight,
-        ),
+      ),
     );
   final ValueNotifier<int> streak = ValueNotifier(0);
   final ValueNotifier<int> score = ValueNotifier(0);
@@ -68,6 +71,7 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
     playState = PlayState.welcome;
   }
 
+
   void startGame({required double difficulty}) {
     if (playState == PlayState.playing) {
       return;
@@ -79,16 +83,18 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
 
     playState = PlayState.playing;
     score.value = 0;
-    
+
+    // Add the ball to the game
     world.add(Ball(
       difficultyModifier: difficulty,
       radius: ballRadius,
       position: size / 2,
-      velocity: Vector2((rand.nextDouble() - 0.5) * width, height * 0.2)
-          .normalized()
+      velocity: Vector2((rand.nextDouble() - 0.5) * width, height * 0.2) // Random velocity
+        .normalized()
         ..scale(height / 4),
     ));
 
+    // Add the bat to the game
     world.add(Bat(
       cornerRadius: const Radius.circular(ballRadius / 2),
       position: Vector2(width / 2, height * 0.95),
