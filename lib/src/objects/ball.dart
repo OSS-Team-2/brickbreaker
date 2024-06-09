@@ -62,6 +62,7 @@ class Ball extends CircleComponent
       game.playState = PlayState.gameOver;
       game.world.removeAll(game.world.children.query<Brick>());
       game.world.removeAll(game.world.children.query<Bat>());
+      }
     } else if (other is Bat) {
       velocity.y *= -1;
       velocity.x = velocity.x +
@@ -98,4 +99,4 @@ class Ball extends CircleComponent
 
     }
   }
-}
+
