@@ -117,12 +117,13 @@ class BrickBreaker extends FlameGame
     ]);
   }
 
-  // @override
-  // void onTap() {
-  //   super.onTap();
-  //   startGame(difficulty: 1.0); // 예시로 기본 난이도 설정
-  //   playState = PlayState.welcome;
-  // }
+  @override
+  void onTap() {
+    super.onTap();
+    if (playState == PlayState.gameOver || playState == PlayState.gameWon) {
+      playState = PlayState.welcome;
+    }
+  }
 
   @override
   KeyEventResult onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
@@ -136,7 +137,9 @@ class BrickBreaker extends FlameGame
         break;
       case LogicalKeyboardKey.space:
       case LogicalKeyboardKey.enter:
-        startGame(difficulty: 1.0); // 기본 난이도로 게임 시작
+        if (playState == PlayState.gameOver || playState == PlayState.gameWon) {
+          playState = PlayState.welcome;
+        }
         break;
     }
 

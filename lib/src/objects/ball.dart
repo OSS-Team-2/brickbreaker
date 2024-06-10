@@ -83,7 +83,7 @@ class Ball extends CircleComponent
         velocity.setFrom(velocity * difficultyModifier);// Increase the speed of the ball with difficultyModifier
       game.streak.value += 1; // Increase the streak
 
-      if (random.nextDouble() <= 0.3/difficultyModifier){
+      if (random.nextDouble() <= 1.0/difficultyModifier){
         final newBall = Ball(
         velocity: Vector2(velocity.x, -velocity.y),
         position: Vector2(position.x, position.y),
@@ -91,12 +91,9 @@ class Ball extends CircleComponent
         difficultyModifier: difficultyModifier,
       );
       game.world.add(newBall); // Ensure new ball is added to the world
-    }
-  }// Create and add a new ball
-      
+      }
+    }// Create and add a new ball
 
-    
-
-    }
   }
+}
 
