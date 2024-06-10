@@ -4,7 +4,7 @@ import '../brickbreakergame.dart';
 class DifficultyOverlay extends StatelessWidget {
   final BrickBreaker game;
 
-  const DifficultyOverlay({required this.game, Key? key}) : super(key: key);
+  const DifficultyOverlay({required this.game, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class DifficultyOverlay extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'Select Difficulty',
-              style: TextStyle(fontSize: 24, color: Colors.white),
+              '난이도를 선택하세요',
+              style: TextStyle(fontSize: 30, color: Colors.black),
             ),
             const SizedBox(height: 20), // 간격 설정
             SizedBox(
@@ -33,7 +33,7 @@ class DifficultyOverlay extends StatelessWidget {
               width: 200, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
-                  game.startGame(difficulty: 1.5); // Medium
+                  game.startGame(difficulty: 1.1); // Medium
                 },
                 child: const Text('Medium'),
               ),
@@ -43,7 +43,7 @@ class DifficultyOverlay extends StatelessWidget {
               width: 200, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
-                  game.startGame(difficulty: 2.0); // Hard
+                  game.startGame(difficulty: 1.2); // Hard
                 },
                 child: const Text('Hard'),
               ),
