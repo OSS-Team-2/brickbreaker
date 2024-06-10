@@ -15,7 +15,7 @@ class DifficultyOverlay extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              '난이도를 선택하세요',
+              'Select Difficulty',
               style: TextStyle(fontSize: 30, color: Colors.black),
             ),
             const SizedBox(height: 20), // 간격 설정
