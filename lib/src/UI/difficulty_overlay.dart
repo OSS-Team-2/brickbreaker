@@ -15,37 +15,46 @@ class DifficultyOverlay extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'Select Difficulty',
+              'Select difficulty',
               style: TextStyle(fontSize: 35, color: Colors.black),
             ),
             const SizedBox(height: 100), // 간격 설정
             SizedBox(
-              width: 200, // 버튼의 너비 설정
+              width: 220, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
                   game.startGame(difficulty: 1.0); // Easy
                 },
-                child: const Text('Easy'),
+                child: const Text(
+                  'Easy',
+                  style: TextStyle(fontSize: 24), // 폰트 크기 설정
+                ),
               ),
             ),
-            const SizedBox(height: 20), // 간격 설정
+            const SizedBox(height: 40), // 간격 설정
             SizedBox(
-              width: 200, // 버튼의 너비 설정
+              width: 220, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
                   game.startGame(difficulty: 1.1); // Medium
                 },
-                child: const Text('Medium'),
+                child: const Text(
+                  'Medium',
+                  style: TextStyle(fontSize: 24), // 폰트 크기 설정
+                ),
               ),
             ),
-            const SizedBox(height: 20), // 간격 설정
+            const SizedBox(height: 40), // 간격 설정
             SizedBox(
-              width: 200, // 버튼의 너비 설정
+              width: 220, // 버튼의 너비 설정
               child: ElevatedButton(
                 onPressed: () {
                   game.startGame(difficulty: 1.2); // Hard
                 },
-                child: const Text('Hard'),
+                child: const Text(
+                  'Hard',
+                  style: TextStyle(fontSize: 24), // 폰트 크기 설정
+                ),
               ),
             ),
           ],
