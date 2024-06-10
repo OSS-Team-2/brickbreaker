@@ -16,9 +16,9 @@ class DifficultyOverlay extends StatelessWidget {
           children: [
             const Text(
               'Select Difficulty',
-              style: TextStyle(fontSize: 24, color: Colors.white),
+              style: TextStyle(fontSize: 35, color: Colors.black),
             ),
-            const SizedBox(height: 20), // 간격 설정
+            const SizedBox(height: 100), // 간격 설정
             SizedBox(
               width: 200, // 버튼의 너비 설정
               child: ElevatedButton(
